@@ -11,10 +11,10 @@ import com.pmt.util.Common;
 
 
 
-public class SyncProductionOrderUpdatetDao {
+public class ServerSyncProductionOrderUpdatetDao {
 	ProductionOrderModel  product = null;
 	
-	public SyncProductionOrderUpdatetDao(ProductionOrderModel product )
+	public ServerSyncProductionOrderUpdatetDao(ProductionOrderModel product )
 	{
 		this.product = product;
 	}
@@ -23,7 +23,7 @@ public class SyncProductionOrderUpdatetDao {
 	{
 		int result = 0;
 		
-		DatabaseConnectionServer conn = new DatabaseConnectionServer();
+		DatabaseConnection conn = new DatabaseConnection();
 		Connection connectString = conn.getConnection();
 		PreparedStatement sqlStatement = connectString.prepareStatement(getSQL());
 		System.out.println(getSQL());
@@ -40,7 +40,6 @@ public class SyncProductionOrderUpdatetDao {
 		sqlStatement.setString(11, product.getIsMode());
 		sqlStatement.setString(12, product.getStatus());
 		sqlStatement.setString(13, product.getOrderCd());
-		sqlStatement.setString(14, product.getDeleteFg());
 		result = sqlStatement.executeUpdate();
 		
 		return result;
@@ -65,7 +64,6 @@ public class SyncProductionOrderUpdatetDao {
 		sql.append(" 	,UPDATE_DT= ?");
 		sql.append(" 	,IS_MODE= ?");
 		sql.append(" 	,STATUS= ?");
-		sql.append(" 	,DELETE_FG= ?");
 		sql.append(" WHERE ");
 		sql.append(" 	 ORDER_CD =  ?");
 		

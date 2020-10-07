@@ -5,15 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.pmt.database.DatabaseConnection;
+import com.pmt.database.DatabaseConnectionServer;
 import com.pmt.model.ProductionOrderModel;
 import com.pmt.util.Common;
 
 
 
-public class ProductionOrderUpdateDeleteDao {
+public class ServerProductionOrderUpdatetModeDao {
 	ProductionOrderModel  product = null;
 	
-	public ProductionOrderUpdateDeleteDao(ProductionOrderModel product )
+	public ServerProductionOrderUpdatetModeDao(ProductionOrderModel product )
 	{
 		this.product = product;
 	}
@@ -22,10 +23,11 @@ public class ProductionOrderUpdateDeleteDao {
 	{
 		int result = 0;
 		
-		DatabaseConnection conn = new DatabaseConnection();
+		DatabaseConnectionServer conn = new DatabaseConnectionServer();
 		Connection connectString = conn.getConnection();
 		PreparedStatement sqlStatement = connectString.prepareStatement(getSQL());
 		System.out.println(getSQL());
+		sqlStatement.setString(1, product.getOrderCd());
 		result = sqlStatement.executeUpdate();
 		
 		return result;
@@ -35,14 +37,11 @@ public class ProductionOrderUpdateDeleteDao {
 	{
 		StringBuilder sql = new StringBuilder();
 		
-		sql.append(" UPDATE ");
-		sql.append(" PRODUCTION_ORDER ");
-		sql.append(" SET ");
-		sql.append(" 	 DELETE_FG ='1' ");
-		sql.append(" 	,IS_MODE= 'isDelete'");
+		sql.append(" UPDATE");
+		sql.append(" PRODUCTION_ORDER");
+		sql.append(" 	SET IS_MODE= 'sync'");
 		sql.append(" WHERE ");
-		sql.append(" 	 ORDER_CD=").append("'"+product.getOrderCd()+"'");
-		
+		sql.append(" 	 ORDER_CD =  ?");
 		
 		return sql.toString();
 	}

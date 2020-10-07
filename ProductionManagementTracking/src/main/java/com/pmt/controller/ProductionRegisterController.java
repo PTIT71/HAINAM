@@ -67,11 +67,11 @@ public class ProductionRegisterController {
 				message+="Tên sản phẩm đại diện là giá trị bắt buộc<br>";
 				isError = false;
 			}
-			if(Common.isEmpty(hdpo))
-			{
-				message+="HDPO là giá trị bắt buộc<br>";
-				isError = false;
-			}
+//			if(Common.isEmpty(hdpo))
+//			{
+//				message+="HDPO là giá trị bắt buộc<br>";
+//				isError = false;
+//			}
 			if(Common.isEmpty(psx))
 			{
 				message+="PSX là giá trị bắt buộc<br>";

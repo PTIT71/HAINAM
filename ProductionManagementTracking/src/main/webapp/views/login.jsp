@@ -19,7 +19,7 @@
   {
     height:60px;
     width:100%;
-    background: #AB0A24;
+    background: #333399;
   }
   .title-display-view
   {
@@ -40,12 +40,12 @@
   .title-table
   {
     text-align: center;
-    color: #AB0A24;
+    color: #333399;
   }
     .panel-menu
   {
     height: 100%;
-    background: #AB0A24;
+    background: #333399;
     z-index: 999999;
     position: fixed;
     top:0;
@@ -89,13 +89,17 @@
     margin-left: -350px; /* Negative half of width. */
 
   }
+  *{
+     font-family: 'Inter', sans-serif;
+     font-weight: bold !important;
+ }
 
   </style>
 </head>
 <body>
 <div class="header">
-   <img src="./resources/images/logo-hai-nam.png" style="height: 100%">
-   <h1 class="company-name" id="company-name">CÔNG TY TNHH SX-TM CƠ KHÍ HẢI NAM</h1> 
+   <img src="./resources/images/logoindruino.png" style="height: 100%">
+   <h1 class="company-name" id="company-name">CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT INDRUINO</h1> 
     <div onclick="showMenu()" class="pagging-area" style="cursor:pointer; float: right; line-height: 80px; padding-right:10px; margin-top:10px;">
        <img src="./resources/images/menu-display-icon.png" style="height: 40px">
    </div>
@@ -103,7 +107,7 @@
 <div style="padding:10px;">
 <div class="title-display-view">
  <h1 class="title-table" id="title-table" >PRODUCTION MANAGEMENT TRACKING</h1>
- <img src="./resources/images/banner-4.png" style="width: 100%; margin-top:40px;">
+ <img src="./resources/images/hinh1.png" style="height:800px; width: 100%; margin-top:40px;">
  <div class="pin-form" id="pin-form">
   <form action="login" method="POST">
     <div class="form-group">
@@ -162,8 +166,8 @@ document.getElementById("usn").focus();
   
 
 	if(parseInt(getBrowserSize().width) < 900){
-		document.getElementById("company-name").style.fontSize = "3vw";
-		document.getElementById("title-table").style.fontSize = "5vw";
+		document.getElementById("company-name").style.fontSize = "2vw";
+		document.getElementById("title-table").style.fontSize = "4vw";
 		document.getElementById("pin-form").style.left = "-1px";
 		document.getElementById("pin-form").style.width = "100%";
 		document.getElementById("pin-form").style.marginLeft = "auto";

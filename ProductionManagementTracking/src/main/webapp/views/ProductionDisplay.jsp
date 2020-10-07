@@ -23,9 +23,9 @@
 }
 
 .header {
-	height: 60px;
+	height: 120px;
 	width: 100%;
-	background: #AB0A24;
+	background: #333399;
 }
 
 .title-display-view {
@@ -39,14 +39,15 @@ img {
 
 .company-name {
 	float: left;
-	line-height: 60px;
+	line-height: 120px;
 	padding-left: 10px;
 	color: white;
+	font-size:50px
 }
 
 .title-table {
 	text-align: center;
-	color: #AB0A24;
+	color: #333399;
 }
 
 .title-display-view .item {
@@ -65,21 +66,23 @@ img {
 	vertical-align: middle;
 	text-align: center;
 	padding: 2px;
-	background: #AB0A24;
+	font-size:30px;
+	background: #333399;
 	color: white;
 	border: 2px solid black;
 }
 
 .table-display tbody tr td {
 	font-size: 25px;
-	font-weight: bold;
+	font-weight: bold !important;
 	padding: 5px;
+	font-size:30px;
 	border: 2px solid black;
 }
 
 .panel-menu {
 	height: 100%;
-	background: #AB0A24;
+	background: #333399;
 	z-index: 999999;
 	position: fixed;
 	top: 0;
@@ -119,13 +122,13 @@ img {
 }
 
 .out-date {
-	background-color: yellow;
+	background-color: #AB0A24;
 	border-radius: 10px;
 	font-weight: 700;
 	text-align: center;
 	font-size: 23px;
 	line-height: 37px;
-	color: red;
+	color: white;
 	text-transform: uppercase;
 	height: 37px;
 }
@@ -153,15 +156,19 @@ img {
 	height: 37px;
 	color: black;
 }
-
+*{
+     font-family: 'Inter', sans-serif;
+     font-weight: bold !important;
+ }
 .warning-date {
-	background-color: orange;
+	background-color: yellow;
 	border-radius: 10px;
 	font-weight: 700;
 	text-align: center;
 	font-size: 20px;
 	text-transform: uppercase;
 	line-height: 37px;
+	color:red;
 	height: 37px;
 }
 
@@ -190,7 +197,7 @@ img {
 }
 
 .tableMobile th {
-	background-color: #AB0A24;
+	background-color: #333399;
 	color: white;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -210,31 +217,36 @@ img {
 </head>
 <body onload="startTime();Pagination();">
 	<div class="header">
-		<img src="./resources/images/logo-hai-nam.png" style="height: 100%">
-		<h1 class="company-name" id="company-name">CÔNG TY TNHH SX-TM CƠ KHÍ HẢI NAM</h1>
+	<div style="width:fit-content; margin:auto">
+		<img src="./resources/images/logoindruino.png" style="height: 100%; margin:auto;">
+		<h1 class="company-name" id="company-name">CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT INDRUINO</h1>
+		
+		</div>
 		<div onclick="showMenu()" class="pagging-area"
 			style="cursor: pointer; float: right; line-height: 80px; padding-right: 10px; margin-top: 10px;">
 			<img src="./resources/images/menu-display-icon.png"
-				style="height: 40px">
+				style="height: 80px">
 		</div>
+			
+	
 	</div>
 	<div style="padding: 10px;">
 		<form action="ProductionDisplay" id="ProductionDisplay" method="POST" style="display: none;">
 			<input name="pageCurrent" id="pageCurrent"/>
 		</form>
 		<div class="title-display-view">
-			<h1 class="title-table" id="tableName">BẢNG THEO DÕI SẢN XUẤT</h1>
+			<h1 class="title-table" id="tableName" style="font-size: 50px">BẢNG THEO DÕI SẢN XUẤT</h1>
 			<table style="width: 100%" id="tableTimeComputer">
 				<tbody style="width: 100%">
 					<tr>
 						<td class="item" style="width: 20%;">
 							<div id="txt"
-								style="width: 320px; height: 100%; padding-left: 10px; padding-right: 10px; background-color: orange; border-radius: 10px; text-align: center;">
+								style="width: 320px; height: 100%; font-size:45px;  padding-left: 10px; padding-right: 10px; background-color: #AB0A24; color:white; border-radius: 10px; text-align: center;">
 								THỜI GIAN: 20:03</div>
 						</td>
 						<td class="item" style="width: 60%; text-align: center;">
 							<div id="ngay"
-								style="width: 500px; height: 100%; background-color: orange; border-radius: 10px; margin: auto;">
+								style="width: 700px; height: 100%; font-size:45px;  background-color: #AB0A24; color:white; border-radius: 10px; margin: auto;">
 								NGÀY 03 THÁNG 12 NĂM 2020</div>
 						</td>
 						<td style="width: 20%">
@@ -275,18 +287,18 @@ img {
 				<table id="table.data" class="table-display table table-bordered">
 					<thead>
 						<tr>
-							<th rowspan="2" style="width: 60px">STT</th>
+							<th rowspan="2" style="width: 80px">STT</th>
 							<th rowspan="2">KHÁCH HÀNG</th>
 							<th rowspan="2">SẢN PHẨM ĐẠI DIỆN</th>
-							<th colspan="2" style="width: 300px">ĐƠN HÀNG</th>
-							<th colspan="2" style="width: 300px">NGÀY</th>
-							<th rowspan="2" style="width: 250px">GHI CHÚ</th>
+							<th colspan="2" >ĐƠN HÀNG</th>
+							<th colspan="2" >NGÀY</th>
+							<th rowspan="2" >GHI CHÚ</th>
 						</tr>
 						<tr>
-							<th style="width: 200px">HĐ,PO</th>
-							<th style="width: 100px">PSX</th>
-							<th style="width: 150px">NHẬN</th>
-							<th style="width: 150px">GIAO</th>
+							<th >HĐ,PO</th>
+							<th >PSX</th>
+							<th >NHẬN</th>
+							<th >GIAO</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -294,7 +306,7 @@ img {
 							int stt = 1;
 						%>
 						<c:forEach var="p" items="${lst}">
-							<tr>
+							<tr style="color:#333399">
 								<td style="text-align: right;"><%=stt%></td>
 								<td>${p.getCustomerName()}</td>
 								<td>${p.getProduction()}</td>
@@ -302,16 +314,16 @@ img {
 								<td style="text-align: center;">${p.getPSX()}</td>
 								<td style="text-align: center;">${p.getRecieveDt()}</td>
 								<td style="text-align: center;">${p.getReleaseScheDt()}</td>
-								<td style="width: 280px"><c:if
+								<td style="width: 350px"><c:if
 										test="${p.getStatus() == '0'}">
 									</c:if> <c:if test="${p.getStatus() == '1'}">
 										<div class="ok-date">ĐÃ GIAO</div>
 									</c:if> <c:if test="${p.getStatus() == '2'}">
-										<div class="warning-date">ĐƠN HÀNG SẮP GIAO</div>
+										<div class="warning-date" style="width: 336px; height: 50px;line-height: 50px; font-size: 25px;">ĐƠN HÀNG ĐẾN HẠN GIAO</div>
 									</c:if> <c:if test="${p.getStatus() == '3'}">
 										<div class="warning-ok-date">GIAO TRỄ</div>
 									</c:if> <c:if test="${p.getStatus() == '4'}">
-										<div class="out-date">ĐƠN HÀNG ĐÃ BỊ TRỄ</div>
+										<div class="out-date" style="width: 336px; height: 50px;line-height: 50px; font-size: 25px;">ĐƠN HÀNG ĐÃ BỊ TRỄ</div>
 									</c:if></td>
 							</tr>
 							<%
@@ -324,15 +336,15 @@ img {
 				</table>
 				<div class="text-right" style="margin-top: 10px;">
 					<%
-						if (stt > 13) {
-								double countPage = stt / 13;
-								if (stt % 13 > 0) {
+						if (stt > 10) {
+								double countPage = stt / 10;
+								if (stt % 10 > 0) {
 									countPage += 1;
 								}
 								int j = 1;
 								while (j <= countPage) {
-									int startIndex = j * 13 - 12;
-									int endIndex = startIndex + 12;
+									int startIndex = j * 10 - 8;
+									int endIndex = startIndex + 10;
 					%>
 					<a class="btn btn-default btn-paging" id='pagging.btn<%=j%>'
 						onclick="movePage('<%=startIndex%>','<%=endIndex%>', '<%=j%>', '<%=countPage%>')"><%=j%></a>
@@ -347,9 +359,9 @@ img {
 			</div>
 			<td class="item" style="width: 60%; text-align: center;">
 				<div id="noteUser"
-					style="width: fit-content; height: 100%; background-color: yellow; font-size:24px; border-radius: 10px; padding-left: 10px; padding-right: 10px;">
+					style="width: fit-content; height: 100%; background-color: yellow; margin:auto; font-size:40px; border-radius: 10px; padding-left: 10px; padding-right: 10px;">
 					<span style=" font-weight: 700">GHI CHÚ: </span><span
-						style=" font-weight: 700; color: red">PSX-KD
+						style=" font-weight: 700; color: red">PHÒNG SẢN XUẤT - KINH DOANH
 						THEO DÕI ĐỂ THỰC HIỆN ĐÚNG TIẾN ĐỘ</span>
 				</div>
 			</td>
@@ -364,7 +376,7 @@ img {
 					<div class="col-sm-12 col-lg-12 col-md-12"
 						style="text-align: center;">
 						<div class="item-display">
-							<div class="head" style="background-color: #AB0A24">
+							<div class="head" style="background-color: #333399">
 								<p style="font-weight: 700; font-size: 25px;">HĐPO:
 									${p.getHD_PO()}</p>
 							</div>
@@ -400,7 +412,7 @@ img {
 									<div style="border-radius:0px" class="ok-date">ĐÃ GIAO</div>
 								</c:if>
 								<c:if test="${p.getStatus() == '2'}">
-									<div style="border-radius:0px" class="warning-date">ĐƠN HÀNG SẮP GIAO</div>
+									<div style="border-radius:0px" class="warning-date">ĐƠN HÀNG ĐẾN HẠN</div>
 								</c:if>
 								<c:if test="${p.getStatus() == '3'}">
 									<div style="border-radius:0px" class="warning-ok-date">GIAO TRỄ</div>
@@ -446,9 +458,9 @@ img {
 			var s = today.getSeconds();
 			m = checkTime(m);
 			s = checkTime(s);
-			document.getElementById('txt').innerHTML = "THỜI GIAN: " + h + ":"
+			document.getElementById('txt').innerHTML = "" + h + ":"
 					+ m + ":" + s;
-			document.getElementById('txtMobile').innerHTML = "THỜI GIAN: " + h + ":"
+			document.getElementById('txtMobile').innerHTML = "" + h + ":"
 			+ m + ":" + s;
 			var t = setTimeout(startTime, 500);
 
@@ -472,8 +484,8 @@ img {
 		function movePage(start, end, indexCurrent, countPage) {
 			var x = document.getElementById("table.data").rows.length;
 			for (var i = 2; i < x; i++) {
-				var index = i + 1;
-				if (i >= start && i <= end) {
+				var index = i;
+				if (i >= start && i < end) {
 					document.getElementById("table.data").rows[i].style.display = '';
 				} else {
 					document.getElementById("table.data").rows[i].style.display = 'none';
@@ -495,13 +507,14 @@ img {
 			var x = document.getElementById("pagging.btn1");
 			x.style.backgroundColor = "red";
 			x.style.color = "white";
-			x = document.getElementById("table.data").rows.length;
-			if (x > 10) {
-				for (var i = 13; i < x; i++) {
-					document.getElementById("table.data").rows[i + 1].style.display = 'none';
-				}
+			x.click();
+// 			x = document.getElementById("table.data").rows.length;
+// 			if (x > 10) {
+// 				for (var i = 11; i < x; i++) {
+// 					document.getElementById("table.data").rows[i + 1].style.display = 'none';
+// 				}
 
-			}
+// 			}
 		}
 		
 		function getBrowserSize(){
@@ -526,10 +539,10 @@ img {
 
 		if(parseInt(getBrowserSize().width) < 900){
 			document.getElementById("table-computer").style.display = "none";
-			document.getElementById("company-name").style.fontSize = "3vw";
-			document.getElementById("noteUser").style.fontSize = "4vw";
+			document.getElementById("company-name").style.fontSize = "2vw";
+			document.getElementById("noteUser").style.fontSize = "3vw";
 			document.getElementById("noteUser").style.textAlign = "center";
-			document.getElementById("tableName").style.fontSize = "7vw";
+			document.getElementById("tableName").style.fontSize = "6vw";
 			document.getElementById("tableTimeComputer").style.display = "none";
 		}
 		else

@@ -5,24 +5,31 @@ import java.util.List;
 
 import com.pmt.dao.SyncProductionOrderInsertDao;
 import com.pmt.dao.LocalProductionOrderUpdatetModeDao;
+import com.pmt.dao.ProductionOrderSelectDao;
 import com.pmt.dao.ServerProductionOrderSelectDao;
+import com.pmt.dao.ServerProductionOrderUpdatetModeDao;
+import com.pmt.dao.ServerSyncProductionOrderInsertDao;
+import com.pmt.dao.ServerSyncProductionOrderSelectDao;
+import com.pmt.dao.ServerSyncProductionOrderUpdatetDao;
+import com.pmt.dao.ServerSystemControlAllSelectDao;
 import com.pmt.dao.ServerSystemControlUpdatetDao;
 import com.pmt.dao.SyncProductionOrderSelectDao;
 import com.pmt.dao.SyncProductionOrderUpdatetDao;
 import com.pmt.dao.SystemControlAllSelectDao;
+import com.pmt.dao.SystemControlUpdatetDao;
 import com.pmt.model.ProductionOrderModel;
 import com.pmt.model.SystemControlModel;
 
-public class SyncProductionLocalToServer {
+public class SyncProductionServerToLocal {
 	
-	public SyncProductionLocalToServer()
+	public SyncProductionServerToLocal()
 	{
 		
 	}
 	
 	public void GetDataSync()
 	{
-		SyncProductionOrderSelectDao selectSysn = new SyncProductionOrderSelectDao();
+		ServerSyncProductionOrderSelectDao selectSysn = new ServerSyncProductionOrderSelectDao();
 		try {
 			List<ProductionOrderModel> lstSys = selectSysn.excute();
 			if(lstSys.size()>0)
@@ -31,20 +38,20 @@ public class SyncProductionLocalToServer {
 				{
 					ProductionOrderModel proTemp = new ProductionOrderModel();
 					proTemp.setOrderCd(lstSys.get(i).getOrderCd());
-					ServerProductionOrderSelectDao serverSelect = new ServerProductionOrderSelectDao(proTemp);
+					ProductionOrderSelectDao serverSelect = new ProductionOrderSelectDao(proTemp);
 					List<ProductionOrderModel> lstPro =  serverSelect.excute();
 					if(lstPro.size()==0)
 					{
-						SyncProductionOrderInsertDao SyncServer= new SyncProductionOrderInsertDao(lstSys.get(i));
+						ServerSyncProductionOrderInsertDao SyncServer= new ServerSyncProductionOrderInsertDao(lstSys.get(i));
 						SyncServer.excute();
 					}
 					else
 					{
-						SyncProductionOrderUpdatetDao SyncServer = new SyncProductionOrderUpdatetDao(lstSys.get(i));
+						ServerSyncProductionOrderUpdatetDao SyncServer = new ServerSyncProductionOrderUpdatetDao(lstSys.get(i));
 						SyncServer.excute();
 					}
 					
-					LocalProductionOrderUpdatetModeDao updateMode = new LocalProductionOrderUpdatetModeDao(lstSys.get(i));
+					ServerProductionOrderUpdatetModeDao updateMode = new ServerProductionOrderUpdatetModeDao(lstSys.get(i));
 					updateMode.excute();
 				}
 				
@@ -54,14 +61,14 @@ public class SyncProductionLocalToServer {
 			e.printStackTrace();
 		}
 		
-		SystemControlAllSelectDao allselect = new SystemControlAllSelectDao("");
+		ServerSystemControlAllSelectDao allselect = new ServerSystemControlAllSelectDao("");
 		try {
 			List<SystemControlModel> lst = allselect.excute();
 			if(lst.size()>0)
 			{
 				for(int i=0;i<lst.size();i++)
 				{
-					ServerSystemControlUpdatetDao update =new ServerSystemControlUpdatetDao(lst.get(i).getPrammeter_tx(), lst.get(i).getParam_value());
+					SystemControlUpdatetDao update =new SystemControlUpdatetDao(lst.get(i).getPrammeter_tx(), lst.get(i).getParam_value());
 					update.excute();
 				}
 			}

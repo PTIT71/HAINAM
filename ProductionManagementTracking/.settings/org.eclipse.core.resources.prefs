@@ -9,5 +9,6 @@ encoding//src/main/java/com/pmt/controller/ProductionRegisterController.java=UTF
 encoding//src/main/java/com/pmt/controller/ProductionViewController.java=UTF-8
 encoding//src/main/java/com/pmt/controller/UserManagemetController.java=UTF-8
 encoding//src/main/java/com/pmt/util/DatabaseCommon.java=UTF-8
+encoding//src/main/java/com/pmt/util/ExcelAssetGeneralListReportView.java=UTF-8
 encoding//src/main/webapp/views/ClockScreen.jsp=UTF-8
 encoding//src/main/webapp/views/ProductionDisplay.jsp=UTF-8

@@ -18,6 +18,10 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <style>
+*{
+     font-family: 'Inter', sans-serif;
+      font-weight: bold !important;
+ }
 .fakeimg {
 	height: 200px;
 	background: #aaa;
@@ -26,7 +30,7 @@
 .title-sub {
 	height: 40px;
 	width: 100%;
-	background: #AB0A24;
+	background: #333399;
 }
 
 .title-sub p {
@@ -54,7 +58,7 @@ img {
 
 .title-table {
 	text-align: center;
-	color: #AB0A24;
+	color: #333399;
 }
 
 .title-display-view .item {
@@ -73,21 +77,21 @@ img {
 	vertical-align: middle;
 	text-align: center;
 	padding: 2px;
-	background: #AB0A24;
+	background: #333399;
 	color: white;
 	border: 2px solid black;
 }
 
 .table-display tbody tr td {
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: bold !important;
 	padding: 5px;
 	border: 2px solid black;
 }
 
 .panel-menu {
 	height: 100%;
-	background: #AB0A24;
+	background: #333399;
 	z-index: 999999;
 	position: fixed;
 	top: 0;
@@ -131,7 +135,7 @@ input[type="text"] {
 .header-sub {
 	height: 35px;
 	width: 100%;
-	background: #ff9999;
+	background: #6495f5;
 	font-weight: 700;
 	line-height: 35px;
 }
@@ -148,7 +152,7 @@ input[type="text"] {
 }
 
 button.btn-control {
-	background-color: #AB0A24;
+	background-color: #333399;
 	color: white;
 	border-radius: 0px;
 	height: 45px;
@@ -158,7 +162,7 @@ button.btn-control {
 }
 
 button.btn-view {
-	background-color: #AB0A24;
+	background-color: #333399;
 	color: white;
 	border-radius: 0px;
 	height: 30px;
@@ -178,7 +182,7 @@ label {
 }
 
 .out-date {
-	background-color: orange;
+	background-color: #f37021;
 	border-radius: 10px;
 	font-weight: 700;
 	text-align: center;

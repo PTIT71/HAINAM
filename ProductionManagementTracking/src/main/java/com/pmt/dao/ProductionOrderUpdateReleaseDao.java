@@ -41,6 +41,7 @@ public class ProductionOrderUpdateReleaseDao {
 		sql.append(" SET ");
 		sql.append(" 	 RELEASE_REAL_DT = ").append("'"+product.getReleaseRelDt()+"',");
 		sql.append(" 	 STATUS = ").append("'"+OrderProductionStatus.RELEASE+"'");
+		sql.append(" 	,IS_MODE= 'isReeal'");
 		sql.append(" WHERE ");
 		sql.append(" 	 ORDER_CD=").append("'"+product.getOrderCd()+"'");
 		

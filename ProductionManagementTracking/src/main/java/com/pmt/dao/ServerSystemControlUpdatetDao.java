@@ -5,24 +5,27 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.pmt.database.DatabaseConnection;
+import com.pmt.database.DatabaseConnectionServer;
 import com.pmt.model.ProductionOrderModel;
 import com.pmt.util.Common;
 
 
 
-public class ProductionOrderUpdateDeleteDao {
-	ProductionOrderModel  product = null;
+public class ServerSystemControlUpdatetDao {
+	String param = null;
+	String value = null;
 	
-	public ProductionOrderUpdateDeleteDao(ProductionOrderModel product )
+	public ServerSystemControlUpdatetDao(String p, String v )
 	{
-		this.product = product;
+		this.param = p;
+		this.value = v;
 	}
 	
 	public int excute() throws SQLException
 	{
 		int result = 0;
 		
-		DatabaseConnection conn = new DatabaseConnection();
+		DatabaseConnectionServer conn = new DatabaseConnectionServer();
 		Connection connectString = conn.getConnection();
 		PreparedStatement sqlStatement = connectString.prepareStatement(getSQL());
 		System.out.println(getSQL());
@@ -35,14 +38,12 @@ public class ProductionOrderUpdateDeleteDao {
 	{
 		StringBuilder sql = new StringBuilder();
 		
-		sql.append(" UPDATE ");
-		sql.append(" PRODUCTION_ORDER ");
+		sql.append(" UPDATE");
+		sql.append(" SYSTEM_CONTROL");
 		sql.append(" SET ");
-		sql.append(" 	 DELETE_FG ='1' ");
-		sql.append(" 	,IS_MODE= 'isDelete'");
+		sql.append(" 	PARAMETER_VALUE=").append("'"+value+"'");
 		sql.append(" WHERE ");
-		sql.append(" 	 ORDER_CD=").append("'"+product.getOrderCd()+"'");
-		
+		sql.append(" 	 PARAMETER_TX = ").append("'"+param+"'");
 		
 		return sql.toString();
 	}

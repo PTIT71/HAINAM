@@ -26,7 +26,7 @@
 .header {
 	height: 60px;
 	width: 100%;
-	background: #AB0A24;
+	background: #333399;
 }
 
 .title-display-view {
@@ -47,7 +47,7 @@ img {
 
 .title-table {
 	text-align: center;
-	color: #AB0A24;
+	color: #333399;
 }
 
 .title-display-view .item {
@@ -66,21 +66,21 @@ img {
 	vertical-align: middle;
 	text-align: center;
 	padding: 2px;
-	background: #AB0A24;
+	background: #333399;
 	color: white;
 	border: 2px solid black;
 }
 
 .table-display tbody tr td {
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: bold !important;
 	padding: 5px;
 	border: 2px solid black;
 }
 
 .panel-menu {
 	height: 100%;
-	background: #AB0A24;
+	background: #333399;
 	z-index: 999999;
 	position: fixed;
 	top: 0;
@@ -120,11 +120,14 @@ input[type="text"] {
 	padding: 2px;
 	border: 2px solid black;
 }
-
+*{
+     font-family: 'Inter', sans-serif;
+     font-weight: bold !important;
+ }
 .header-sub {
 	height: 35px;
 	width: 100%;
-	background: #ff9999;
+	background: #6495f5;
 	font-weight: 700;
 	line-height: 35px;
 }
@@ -141,7 +144,7 @@ input[type="text"] {
 }
 
 button.btn-control {
-	background-color: #AB0A24;
+	background-color: #333399;
 	color: white;
 	border-radius: 0px;
 	height: 45px;
@@ -152,7 +155,7 @@ button.btn-control {
 }
 
 button.btn-view {
-	background-color: #AB0A24;
+	background-color: #333399;
 	color: white;
 	border-radius: 0px;
 	height: 30px;
@@ -164,8 +167,8 @@ button.btn-view {
 </head>
 <body onload="Pagination();">
 	<div class="header">
-		<img src="./resources/images/logo-hai-nam.png" style="height: 100%">
-		<h1 class="company-name">CÔNG TY TNHH SX-TM CƠ KHÍ HẢI NAM</h1>
+		<img src="./resources/images/logoindruino.png" style="height: 100%">
+		<h1 class="company-name">CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT INDRUINO</h1>
 		<div onclick="showMenu()" class="pagging-area"
 			style="cursor: pointer; float: right; line-height: 80px; padding-right: 10px; margin-top: 10px;">
 			<img src="./resources/images/menu-display-icon.png"
@@ -230,7 +233,7 @@ button.btn-view {
 	function ChangeSource(url) {
 		
 		var ifr = document.getElementById("sourceFrame");
-		ifr.src = window.location.protocol + "//" + window.location.host + "/" +  "QuanLySanXuat" + "/" +  url
+		ifr.src = window.location.protocol + "//" + window.location.host + "/" +  "indruino.pmt" + "/" +  url
 		
 	}
 	

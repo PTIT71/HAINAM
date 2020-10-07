@@ -18,7 +18,7 @@
 <style type="text/css">
 .panel-menu {
 	height: 100%;
-	background: #AB0A24;
+	background: #333399;
 	z-index: 999999;
 	position: fixed;
 	top: 0;
@@ -52,8 +52,8 @@
 
 <body>
 	<div class="header">
-		<img src="./resources/images/logo-hai-nam.png" style="height: 100%">
-		<h1 class="company-name" id="company-name">CÔNG TY TNHH SX-TM CƠ KHÍ HẢI NAM</h1>
+		<img src="./resources/images/logoindruino.png" style="height: 100%">
+		<h1 class="company-name" id="company-name">CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT INDRUINO</h1>
 		<div onclick="showMenu()" class="pagging-area"
 			style="cursor: pointer; float: right; line-height: 80px; padding-right: 10px; margin-top: 10px;">
 			<img src="./resources/images/menu-display-icon.png"
@@ -63,8 +63,8 @@
 	<div style="padding: 10px;">
 		<div class="title-display-view">
 			<h1 class="title-table" id="title-table">PRODUCTION MANAGEMENT TRACKING</h1>
-			<img src="./resources/images/banner-3.jpg"
-				style="width: 100%; margin-top: 50px;">
+			<img src="./resources/images/hinh1.png"
+				style="width: 100%; margin-top: 50px; height:800px;">
 			<div class="pin-form" id="pin-form">
 				<form action="Clock" method="POST">
 					<div class="form-group">
@@ -130,8 +130,8 @@
 	  
 
 		if(parseInt(getBrowserSize().width) < 900){
-			document.getElementById("company-name").style.fontSize = "3vw";
-			document.getElementById("title-table").style.fontSize = "5vw";
+			document.getElementById("company-name").style.fontSize = "2vw";
+			document.getElementById("title-table").style.fontSize = "4vw";
 			document.getElementById("pin-form").style.left = "-1px";
 			document.getElementById("pin-form").style.width = "100%";
 			document.getElementById("pin-form").style.marginLeft = "auto";

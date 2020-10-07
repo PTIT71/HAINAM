@@ -1,3 +1,7 @@
+*{
+     font-family: 'Inter', sans-serif;
+     font-weight: bold !important;
+ }
 .fakeimg {
     height: 200px;
     background: #aaa;
@@ -6,7 +10,7 @@
   {
     height:60px;
     width:100%;
-    background: #AB0A24;
+    background: #333399;
   }
   .title-display-view
   {
@@ -27,7 +31,7 @@
   .title-table
   {
     text-align: center;
-    color: #AB0A24;
+    color: #333399;
   }
   .pin-form
   {

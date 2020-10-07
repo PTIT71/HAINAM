@@ -28,7 +28,7 @@
 .header {
 	height: 60px;
 	width: 100%;
-	background: #AB0A24;
+	background: #333399;
 }
 
 .title-display-view {
@@ -49,7 +49,7 @@ img {
 
 .title-table {
 	text-align: center;
-	color: #AB0A24;
+	color: #333399;
 }
 
 .title-display-view .item {
@@ -68,21 +68,21 @@ img {
 	vertical-align: middle;
 	text-align: center;
 	padding: 2px;
-	background: #AB0A24;
+	background: #333399;
 	color: white;
 	border: 2px solid black;
 }
 
 .table-display tbody tr td {
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: bold !important;
 	padding: 5px;
 	border: 2px solid black;
 }
 
 .panel-menu {
 	height: 100%;
-	background: #AB0A24;
+	background: #333399;
 	z-index: 999999;
 	position: fixed;
 	top: 0;
@@ -122,11 +122,14 @@ input[type="text"] {
 	padding: 2px;
 	border: 2px solid black;
 }
-
+*{
+     font-family: 'Inter', sans-serif;
+     font-weight: bold !important;
+ }
 .header-sub {
 	height: 35px;
 	width: 100%;
-	background: #ff9999;
+	background: #6495f5;
 	font-weight: 700;
 	line-height: 35px;
 }
@@ -143,7 +146,7 @@ input[type="text"] {
 }
 
 button.btn-control {
-	background-color: #AB0A24;
+	background-color: #333399;
 	color: white;
 	border-radius: 0px;
 	height: 45px;
@@ -153,7 +156,7 @@ button.btn-control {
 }
 
 button.btn-view {
-	background-color: #AB0A24;
+	background-color: #333399;
 	color: white;
 	border-radius: 0px;
 	height: 30px;
@@ -173,12 +176,13 @@ label {
 }
 
 .out-date {
-	background-color: orange;
+	background-color: #f37021;
 	border-radius: 10px;
 	font-weight: 700;
 	text-align: center;
 	font-size: 16px;
 	line-height: 30px;
+	color:white;
 	text-transform: uppercase;
 	height: 30px;
 }
@@ -215,6 +219,7 @@ label {
 	font-size: 16px;
 	text-transform: uppercase;
 	line-height: 30px;
+	color:red;
 	height: 30px;
 }
 
@@ -258,7 +263,7 @@ input[type="radio"] {
 }
 
 .tableMobile th {
-	background-color: #AB0A24;
+	background-color: #333399;
 	color: white;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -280,9 +285,8 @@ input[type="radio"] {
 </head>
 <body onload="Pagination();">
 	<div class="header">
-		<img src="./resources/images/logo-hai-nam.png" style="height: 100%">
-		<h1 class="company-name" id="company-name">CÔNG TY TNHH SX-TM CƠ
-			KHÍ HẢI NAM</h1>
+		<img src="./resources/images/logoindruino.png" style="height: 100%">
+		<h1 class="company-name" id="company-name">CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT INDRUINO</h1>
 		<div onclick="showMenu()" class="pagging-area"
 			style="cursor: pointer; float: right; line-height: 80px; padding-right: 10px; margin-top: 10px;">
 			<img src="./resources/images/menu-display-icon.png"
@@ -366,6 +370,7 @@ input[type="radio"] {
 					<div class="text-right">
 						<button type="submit" name="sync" class="btn btn-control">ĐỒNG
 							BỘ</button>
+						<button type="submit" name="excel" class="btn btn-control">XUẤT EXCEL</button>
 						<button type="submit" name="search" class="btn btn-control">TÌM
 							KIẾM</button>
 						<button type="submit" name="register" class="btn btn-control">ĐĂNG
@@ -469,7 +474,7 @@ input[type="radio"] {
 						<div class="col-sm-12 col-lg-12 col-md-12"
 							style="text-align: center;">
 							<div class="item-display">
-								<div class="head" style="background-color: #AB0A24">
+								<div class="head" style="background-color: #333399">
 									<p style="font-weight: 700; font-size: 25px;">HĐPO:
 										${p.getHD_PO()}</p>
 								</div>
@@ -638,7 +643,7 @@ input[type="radio"] {
 
 	if (parseInt(getBrowserSize().width) < 900) {
 
-		document.getElementById("company-name").style.fontSize = "3vw";
+		document.getElementById("company-name").style.fontSize = "2vw";
 		document.getElementById("tableComputer").style.display = "none";
 
 		document.getElementById("row1hide").style.display = "none";

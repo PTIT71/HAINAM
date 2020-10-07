@@ -17,22 +17,19 @@ public class DatabaseConnection {
 	Connection conn = null;
 	public DatabaseConnection()
 	{
-		
+	
 	}
 	
-	public Connection getConnection() {
-		
+	public Connection getConnection() { 	
 		 try {
 //			 File file = new File("C:\\PMT\\ipconfig.txt"); 
-//			  
 //			  BufferedReader br = new BufferedReader(new FileReader(file)); 
-//			  
 //			  String st; 
 //			  while ((st = br.readLine()) != null) 
 //			  {
 //				  DB_IP=st.trim();
 //			  } 
-			   String DB_URL = "jdbc:sqlserver://"+DatabaseCommon.DB_IP+"\\SQLEXPRESS:"+DatabaseCommon.DB_PORT+";databaseName="+DatabaseCommon.DB_NAME+"";
+			   String DB_URL = "jdbc:sqlserver://"+"66.42.59.186"+"\\SQLEXPRESS:"+DatabaseCommon.DB_PORT+";databaseName="+DatabaseCommon.DB_NAME+"";
 	            Class.forName(DatabaseCommon.DRIVERSQLSERVER).newInstance();
 	            System.out.println(DB_URL + "  " +  DatabaseCommon.DB_USER  + "  " +  DatabaseCommon.DB_PASS );
 	            conn = DriverManager.getConnection(DB_URL, DatabaseCommon.DB_USER, DatabaseCommon.DB_PASS);

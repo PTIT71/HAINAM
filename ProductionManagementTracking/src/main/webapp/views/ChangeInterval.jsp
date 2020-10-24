@@ -251,20 +251,20 @@ input[type="radio"] {
 		<form action="ChangeInterval" method="post">
 			<div style="width: 100%;">
 				<p style="font-size: 40px; float: left">THỜI GIAN CHUYỂN TRANG: </p>
-				<p style="font-size: 40px; font-weight: 700; color: red;">${interval_cd}</p>
+				<p style="font-size: 40px; font-weight: 700; color: red;padding-left:5px">${interval_cd}</p>
 				<br>
 				<p style="font-size: 40px; float: left">THỜI GIAN CẬP NHẬT MÀN HÌNH: </p>
-				<p style="font-size: 40px; font-weight: 700; color: red;">${load_cd}</p>
+				<p style="font-size: 40px; font-weight: 700; color: red; padding-left:5px">${load_cd}</p>
 
 			</div>
 			<br> <label style="font-size: 20px; font-weight: 700">NHẬP
-				THỜI GIAN CHUYỂN TRANG</label> <input type="number" class="form-control" name="interval_cd"
+				THỜI GIAN CHUYỂN TRANG</label> <input  type="number" class="form-control" name="interval_cd"
 				value="${interval_cd_new}"
-				style="margin-bottom: 10px; width: 100px; height: 60px; font-size: 30px"> 
+				style="padding-left:5px;margin-bottom: 10px; width: 100px; height: 60px; font-size: 30px"> 
 				<br> <label style="font-size: 20px; font-weight: 700">NHẬP
 				THỜI GIAN CẬP NHẬT MÀN HÌNH</label> <input type="number" class="form-control" name="load_cd"
 				value="${pin_new}"
-				style="margin-bottom: 10px;width: 100px; height: 60px; font-size: 30px">
+				style="padding-left:5px; margin-bottom: 10px;width: 100px; height: 60px; font-size: 30px">
 
 			<button class="btn btn-control"
 				style="margin-top: 10px; margin: auto;" type="submit" name="save">LƯU

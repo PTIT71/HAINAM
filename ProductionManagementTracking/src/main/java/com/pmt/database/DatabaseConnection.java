@@ -3,6 +3,7 @@ package com.pmt.database;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.net.InetAddress;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -25,11 +26,14 @@ public class DatabaseConnection {
 //			 File file = new File("C:\\PMT\\ipconfig.txt"); 
 //			  BufferedReader br = new BufferedReader(new FileReader(file)); 
 //			  String st; 
+			  System.out.println(InetAddress.getLocalHost().getHostAddress());
 //			  while ((st = br.readLine()) != null) 
 //			  {
 //				  DB_IP=st.trim();
 //			  } 
-			   String DB_URL = "jdbc:sqlserver://"+"66.42.59.186"+"\\SQLEXPRESS:"+DatabaseCommon.DB_PORT+";databaseName="+DatabaseCommon.DB_NAME+"";
+			  System.out.println(InetAddress.getLocalHost().getHostName());;
+			   DB_IP = InetAddress.getLocalHost().getHostAddress().trim();
+			   String DB_URL = "jdbc:sqlserver://"+DB_IP+"\\SQLEXPRESS:"+DatabaseCommon.DB_PORT+";databaseName="+DatabaseCommon.DB_NAME+"";
 	            Class.forName(DatabaseCommon.DRIVERSQLSERVER).newInstance();
 	            System.out.println(DB_URL + "  " +  DatabaseCommon.DB_USER  + "  " +  DatabaseCommon.DB_PASS );
 	            conn = DriverManager.getConnection(DB_URL, DatabaseCommon.DB_USER, DatabaseCommon.DB_PASS);

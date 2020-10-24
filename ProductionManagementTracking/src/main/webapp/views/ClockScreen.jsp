@@ -63,8 +63,8 @@
 	<div style="padding: 10px;">
 		<div class="title-display-view">
 			<h1 class="title-table" id="title-table">PRODUCTION MANAGEMENT TRACKING</h1>
-			<img src="./resources/images/hinh1.png"
-				style="width: 100%; margin-top: 50px; height:800px;">
+			<img src="./resources/images/indruino-background.png"
+				style="width: 100%; margin-top: 50px; height:1000px;">
 			<div class="pin-form" id="pin-form">
 				<form action="Clock" method="POST">
 					<div class="form-group">

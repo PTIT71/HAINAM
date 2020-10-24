@@ -16,6 +16,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .fakeimg {
 	height: 200px;
@@ -69,7 +70,7 @@ img {
 	font-size:30px;
 	background: #333399;
 	color: white;
-	border: 2px solid black;
+	border: 4px solid black;
 }
 
 .table-display tbody tr td {
@@ -79,7 +80,10 @@ img {
 	font-size:30px;
 	border: 2px solid black;
 }
-
+.table-display thead
+{
+	border: 2px solid black;
+}
 .panel-menu {
 	height: 100%;
 	background: #333399;
@@ -181,6 +185,8 @@ img {
 	background-color: lightgray;
 }
 
+
+
 .item-display p {
 	margin: 0px;
 }
@@ -213,18 +219,22 @@ img {
 	border: 2px solid black;
 	padding-left: 10px;
 }
+input[type="text"]:focus {
+	outline: none;
+	
+}
 </style>
 </head>
 <body onload="startTime();Pagination();">
-	<div class="header">
+	<div class="header" id="header">
 	<div style="width:fit-content; margin:auto">
-		<img src="./resources/images/logoindruino.png" style="height: 100%; margin:auto;">
+		<img id="image-logo" src="./resources/images/logoindruino.png" style="height: 100%; margin:auto; margin-top:10px">
 		<h1 class="company-name" id="company-name">CÔNG TY TNHH GIẢI PHÁP KỸ THUẬT INDRUINO</h1>
 		
 		</div>
 		<div onclick="showMenu()" class="pagging-area"
 			style="cursor: pointer; float: right; line-height: 80px; padding-right: 10px; margin-top: 10px;">
-			<img src="./resources/images/menu-display-icon.png"
+			<img id="image-menu" src="./resources/images/menu-display-icon.png"
 				style="height: 80px">
 		</div>
 			
@@ -234,14 +244,14 @@ img {
 		<form action="ProductionDisplay" id="ProductionDisplay" method="POST" style="display: none;">
 			<input name="pageCurrent" id="pageCurrent"/>
 		</form>
-		<div class="title-display-view">
-			<h1 class="title-table" id="tableName" style="font-size: 50px">BẢNG THEO DÕI SẢN XUẤT</h1>
+		<div class="title-display-view" style="padding-top:0px;">
+			<h1 class="title-table" id="tableName" style="font-size: 55px; width: 100%; display: table;">BẢNG THEO DÕI SẢN XUẤT</h1>
 			<table style="width: 100%" id="tableTimeComputer">
 				<tbody style="width: 100%">
 					<tr>
 						<td class="item" style="width: 20%;">
 							<div id="txt"
-								style="width: 320px; height: 100%; font-size:45px;  padding-left: 10px; padding-right: 10px; background-color: #AB0A24; color:white; border-radius: 10px; text-align: center;">
+								style="width: 280px; height: 100%; padding-top:3px; font-size:45px;  padding-left: 10px; padding-right: 10px; background-color: #AB0A24; color:white; border-radius: 10px; text-align: center;">
 								THỜI GIAN: 20:03</div>
 						</td>
 						<td class="item" style="width: 60%; text-align: center;">
@@ -265,7 +275,7 @@ img {
 					<tr>
 						<td class="item" style="width: 20%;">
 							<div id="txtMobile"
-								style="width: 320px; margin:auto; height: 100%; padding-left: 10px; padding-right: 10px; background-color: orange; border-radius: 10px; text-align: center;">
+								style="width: 280px; margin:auto; height:62px; padding-top:5px; padding-left: 10px; padding-right: 10px; background-color: orange; border-radius: 10px; text-align: center;">
 								THỜI GIAN: 20:03</div>
 						</td>
 						</tr>
@@ -283,22 +293,22 @@ img {
 
 		<%-- 		<jsp:include page="message.jsp"></jsp:include> --%>
 		<c:if test="${lst.size() > 0}">
-			<div class="table-area" id="table-computer">
-				<table id="table.data" class="table-display table table-bordered">
+			<div class="table-area" id="table-computer" style="padding-bottom:5px;">
+				<table id="table.data" class="table-display table table-bordered" style="margin-bottom:5px;">
 					<thead>
 						<tr>
-							<th rowspan="2" style="width: 80px">STT</th>
-							<th rowspan="2">KHÁCH HÀNG</th>
-							<th rowspan="2">SẢN PHẨM ĐẠI DIỆN</th>
-							<th colspan="2" >ĐƠN HÀNG</th>
-							<th colspan="2" >NGÀY</th>
-							<th rowspan="2" >GHI CHÚ</th>
+							<th rowspan="2" style="border-top: 4px solid black; width: 80px; border-right:4px solid white;">STT</th>
+							<th rowspan="2" style="border-top: 4px solid black; border-right:4px solid white; border-left: 4px solid white;">KHÁCH HÀNG</th>
+							<th rowspan="2" style="border-top: 4px solid black; border-right:4px solid white; border-left: 4px solid white;">SẢN PHẨM ĐẠI DIỆN</th>
+							<th colspan="2" style="border-top: 4px solid black; border-right:4px solid white; border-left: 4px solid white; border-bottom:4px solid white;">ĐƠN HÀNG</th>
+							<th colspan="2" style="border-top: 4px solid black; border-right:4px solid white; border-left: 4px solid white; border-bottom:4px solid white;">NGÀY</th>
+							<th rowspan="2" style="border-top: 4px solid black; border-right:4px solid black;">GHI CHÚ</th>
 						</tr>
 						<tr>
-							<th >HĐ,PO</th>
-							<th >PSX</th>
-							<th >NHẬN</th>
-							<th >GIAO</th>
+							<th style="border-top:4px solid white; border-right:4px solid white; border-left: 4px solid white;">HĐ,PO</th>
+							<th style="border-top:4px solid white;border-right:4px solid white; border-left: 4px solid white;">PSX</th>
+							<th style="border-top:4px solid white;border-right:4px solid white; border-left: 4px solid white;">NHẬN</th>
+							<th style="border-top:4px solid white;border-right:4px solid white; border-left: 4px solid white;">GIAO</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -307,11 +317,11 @@ img {
 						%>
 						<c:forEach var="p" items="${lst}">
 							<tr style="color:#333399">
-								<td style="text-align: right;"><%=stt%></td>
-								<td>${p.getCustomerName()}</td>
-								<td>${p.getProduction()}</td>
-								<td style="text-align: center;">${p.getHD_PO()}</td>
-								<td style="text-align: center;">${p.getPSX()}</td>
+								<td style="text-align: center;"><%=stt%></td>
+								<td style=" overflow: hidden;"><input type="text" style="width:100%; height:40px; border: 0px;" readonly="readonly" value="${p.getCustomerName()}"></td>
+								<td style=" overflow: hidden;"><input type="text"  style="width:100%; height:40px; border: 0px;" readonly="readonly" value="${p.getProduction()}"></td>
+								<td style="text-align: center; width:250px;">${p.getHD_PO()}</td>
+								<td style="text-align: center; width:120px">${p.getPSX()}</td>
 								<td style="text-align: center;">${p.getRecieveDt()}</td>
 								<td style="text-align: center;">${p.getReleaseScheDt()}</td>
 								<td style="width: 350px"><c:if
@@ -319,11 +329,11 @@ img {
 									</c:if> <c:if test="${p.getStatus() == '1'}">
 										<div class="ok-date">ĐÃ GIAO</div>
 									</c:if> <c:if test="${p.getStatus() == '2'}">
-										<div class="warning-date" style="width: 336px; height: 50px;line-height: 50px; font-size: 25px;">ĐƠN HÀNG ĐẾN HẠN GIAO</div>
+										<div class="warning-date" style="width: 336px; height: 40px;line-height: 40px; font-size: 25px;">ĐƠN HÀNG ĐẾN HẠN GIAO</div>
 									</c:if> <c:if test="${p.getStatus() == '3'}">
 										<div class="warning-ok-date">GIAO TRỄ</div>
 									</c:if> <c:if test="${p.getStatus() == '4'}">
-										<div class="out-date" style="width: 336px; height: 50px;line-height: 50px; font-size: 25px;">ĐƠN HÀNG ĐÃ BỊ TRỄ</div>
+										<div class="out-date" style="width: 336px; height:40px;line-height: 40px; font-size: 25px;">ĐƠN HÀNG ĐÃ BỊ TRỄ</div>
 									</c:if></td>
 							</tr>
 							<%
@@ -359,7 +369,7 @@ img {
 			</div>
 			<td class="item" style="width: 60%; text-align: center;">
 				<div id="noteUser"
-					style="width: fit-content; height: 100%; background-color: yellow; margin:auto; font-size:40px; border-radius: 10px; padding-left: 10px; padding-right: 10px;">
+					style="margin-top:5px; width: fit-content; height: 100%; background-color: yellow; margin:auto; font-size:40px; border-radius: 10px; padding-left: 10px; padding-right: 10px;">
 					<span style=" font-weight: 700">GHI CHÚ: </span><span
 						style=" font-weight: 700; color: red">PHÒNG SẢN XUẤT - KINH DOANH
 						THEO DÕI ĐỂ THỰC HIỆN ĐÚNG TIẾN ĐỘ</span>
@@ -458,7 +468,16 @@ img {
 			var s = today.getSeconds();
 			m = checkTime(m);
 			s = checkTime(s);
-			document.getElementById('txt').innerHTML = "" + h + ":"
+			
+			h = h+ "";
+			
+			var ns = h.length;
+			if(ns ==1 )
+			{
+			   h = "0"+h;
+			}
+			
+			document.getElementById('txt').innerHTML = "<i class='fa fa-clock-o' style='font-size: 50px; margin-right:5px; color:white' aria-hidden='true'></i>" +"  "+ h + ":"
 					+ m + ":" + s;
 			document.getElementById('txtMobile').innerHTML = "" + h + ":"
 			+ m + ":" + s;
@@ -544,17 +563,40 @@ img {
 			document.getElementById("noteUser").style.textAlign = "center";
 			document.getElementById("tableName").style.fontSize = "6vw";
 			document.getElementById("tableTimeComputer").style.display = "none";
+			document.getElementById("header").style.height = "70px";
+			document.getElementById("image-logo").style.height = "70px";
+			document.getElementById("company-name").style.lineHeight = "70px";
+			document.getElementById("image-menu").style.height = "40px";
 		}
 		else
 		{
 			document.getElementById("tableMobile").style.display = "none";
 			document.getElementById("tableTimeMobile").style.display = "none";
 		}
-		var loadPage = setInterval(function() {
+		var loadPage = setInterval(
 			
-			document.getElementById("pageCurrent").value=indexButton;
-				document.getElementById("ProductionDisplay").submit();
-				
+			function() {
+              var newCount=0;
+                $
+                    .ajax({
+                        type: 'GET',
+                        url: 'http://'+window.location.hostname+':8080/QuanLySanXuat/getCount',
+                        success: function(
+                            result) {
+                        	newCount = result;
+                        	if(newCount == "1")
+                            {
+                          		document.getElementById("pageCurrent").value=indexButton;
+                				document.getElementById("ProductionDisplay").submit();
+                            }	
+                        },
+                        error: function(
+                            request,
+                            status, error) {
+                        }
+
+                    });
+              
 			}, ${load});
 		var indexButton = ${pageCurrent};
 		var x = setInterval(function() {

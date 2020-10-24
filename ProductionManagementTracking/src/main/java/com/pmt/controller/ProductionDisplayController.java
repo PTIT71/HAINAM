@@ -116,6 +116,7 @@ public class ProductionDisplayController {
 					}
 
 					mv.addObject("lst", lstDisplay);
+					mv.addObject("countcurrent", lstDisplay.size());
 
 					
 				}
@@ -228,6 +229,7 @@ public class ProductionDisplayController {
 					}
 	
 					mv.addObject("lst", lstDisplay);
+					mv.addObject("countcurrent", lstDisplay.size());
 	
 					
 				}

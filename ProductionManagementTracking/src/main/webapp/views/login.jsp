@@ -107,7 +107,7 @@
 <div style="padding:10px;">
 <div class="title-display-view">
  <h1 class="title-table" id="title-table" >PRODUCTION MANAGEMENT TRACKING</h1>
- <img src="./resources/images/hinh1.png" style="height:800px; width: 100%; margin-top:40px;">
+ <img src="./resources/images/indruino-background.png" style="height:1000px; width: 100%; margin-top:40px;">
  <div class="pin-form" id="pin-form">
   <form action="login" method="POST">
     <div class="form-group">

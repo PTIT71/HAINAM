@@ -148,6 +148,7 @@ public class ProductionRegisterController {
 					atrr.addFlashAttribute(Common.MESSAGE_NOTIFICATION, "ĐĂNG KÝ ĐƠN HÀNG THÀNH CÔNG");
 					request.getSession().setAttribute("orderCd", productionModel.getOrderCd());
 					mv.setViewName("redirect:/ProductionView");
+					Common.SetIsUpdate();
 					return mv;
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block

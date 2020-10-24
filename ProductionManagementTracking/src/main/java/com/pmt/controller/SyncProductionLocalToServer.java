@@ -12,6 +12,7 @@ import com.pmt.dao.SyncProductionOrderUpdatetDao;
 import com.pmt.dao.SystemControlAllSelectDao;
 import com.pmt.model.ProductionOrderModel;
 import com.pmt.model.SystemControlModel;
+import com.pmt.util.Common;
 
 public class SyncProductionLocalToServer {
 	
@@ -69,6 +70,7 @@ public class SyncProductionLocalToServer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Common.SetIsUpdate();
 	}
 
 }

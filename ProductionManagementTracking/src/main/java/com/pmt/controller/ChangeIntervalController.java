@@ -31,17 +31,32 @@ public class ChangeIntervalController {
 				int int_interval = Integer.parseInt(interval_cd.trim());
 				
 				int minutes = (int_interval/60)/1000;
+				if(minutes == 0)
+				{
+					minutes =1;
+				}
+				else
+				{
+					minutes =minutes*2;
+				}
 				
 				mv.addObject("interval_cd", minutes+ " PHÚT");
 				
 				 select = new SystemControlSelectDao("LOAD_CD");
 				 
-					String load_cd = select.excute();
+				String load_cd = select.excute();
 				 
 				 int int_load = Integer.parseInt(load_cd.trim());
 					
 				int minutes_load = (int_load/60)/1000;
-				 
+				if(minutes_load == 0)
+				{
+					minutes_load =1;
+				}
+				else
+				{
+					minutes_load =minutes_load*2;
+				}
 			
 				mv.addObject("load_cd", minutes_load + " PHÚT");
 			} catch (SQLException e) {
@@ -88,7 +103,7 @@ public class ChangeIntervalController {
 						
 						int String_inter = int_inter * 60 * 1000;
 						
-						SystemControlUpdatetDao up = new SystemControlUpdatetDao("INTERVAL_CD", String_inter + "");
+						SystemControlUpdatetDao up = new SystemControlUpdatetDao("INTERVAL_CD", String_inter/2 + "");
 						try {
 							up.excute();
 							att.addFlashAttribute(Common.MESSAGE_NOTIFICATION, "THAY ĐỔI THỜI GIAN CHUYỂN TRANG THÀNH CÔNG");
@@ -110,7 +125,7 @@ public class ChangeIntervalController {
 						int int_inter_v = Integer.parseInt(load_cd.trim());
 						
 						int String_inter_v = int_inter_v * 60 * 1000;
-						SystemControlUpdatetDao up = new SystemControlUpdatetDao("LOAD_CD", String_inter_v+"");
+						SystemControlUpdatetDao up = new SystemControlUpdatetDao("LOAD_CD", String_inter_v/2+"");
 						try {
 							up.excute();
 							att.addFlashAttribute(Common.MESSAGE_NOTIFICATION, "THAY ĐỔI THỜI GIAN TẢI TRANG THÀNH CÔNG");
@@ -123,6 +138,7 @@ public class ChangeIntervalController {
 				}
 					
 			}
+			Common.SetIsUpdate();
 			mv.setViewName("redirect:/ChangeInterval");
 		}
 		else

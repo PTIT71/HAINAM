@@ -233,7 +233,7 @@ button.btn-view {
 	function ChangeSource(url) {
 		
 		var ifr = document.getElementById("sourceFrame");
-		ifr.src = window.location.protocol + "//" + window.location.host + "/" +  "indruino.pmt" + "/" +  url
+		ifr.src = window.location.protocol + "//" + window.location.host + "/" +  "QuanLySanXuat" + "/" +  url
 		
 	}
 	

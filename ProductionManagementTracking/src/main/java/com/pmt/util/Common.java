@@ -1,5 +1,6 @@
 package com.pmt.util;
 
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,6 +8,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+
+import com.pmt.dao.SystemControlUpdatetDao;
 
 
 
@@ -140,13 +143,42 @@ public class Common {
 	}
 	
 	public static String ConvertStringToDateStr(String date, String fmt_src, String fmt_des) throws ParseException
-	{	    
-	    SimpleDateFormat sdf1 = new SimpleDateFormat(fmt_src);
-	    SimpleDateFormat sdf2 = new SimpleDateFormat(fmt_des);
-	    String ds2 = sdf2.format(sdf1.parse(date));
-	    
-	    return ds2;
+	{
+		if(Common.isNotEmpty(date))
+		{
+		    SimpleDateFormat sdf1 = new SimpleDateFormat(fmt_src);
+		    SimpleDateFormat sdf2 = new SimpleDateFormat(fmt_des);
+		    String ds2 = sdf2.format(sdf1.parse(date));
+		    
+		    return ds2;
+		}
+		else
+		{
+			return "0";
+		}
 		
+	}
+	
+	public static void SetIsUpdate()
+	{
+		SystemControlUpdatetDao update = new SystemControlUpdatetDao("IS_UPDATE", "1");
+		try {
+			update.excute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void SetIsNotUpdate()
+	{
+		SystemControlUpdatetDao update = new SystemControlUpdatetDao("IS_UPDATE", "0");
+		try {
+			update.excute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

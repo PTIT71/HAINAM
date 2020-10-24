@@ -244,6 +244,7 @@ public class ProductionViewController {
 								update.excute();
 								mv.addObject(Common.MESSAGE_NOTIFICATION, "CẬP NHẬT ĐƠN HÀNG THÀNH CÔNG");
 								request.getSession().setAttribute("orderCd", orderCd);
+								Common.SetIsUpdate();
 								mv.setViewName("/views/ProductionView.jsp");
 								return mv;
 							} catch (SQLException e) {
@@ -267,7 +268,7 @@ public class ProductionViewController {
 				}
 			
 			
-			
+				
 				mv.setViewName("/views/ProductionView.jsp");
 			}
 			else
@@ -299,6 +300,7 @@ public class ProductionViewController {
 				try {
 					seelct.excute();
 					mv.addObject(Common.MESSAGE_NOTIFICATION, "XÓA ĐƠN HÀNG THÀNH CÔNG");
+					Common.SetIsUpdate();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					mv.addObject(Common.MESSAGE_ERROR, "LỖI KHI XÓA ĐƠN HÀNG");
@@ -359,6 +361,7 @@ public class ProductionViewController {
 					seelct.excute();
 					arrt.addFlashAttribute(Common.MESSAGE_NOTIFICATION, "CẬP NHẬT GIAO HÀNG THÀNH CÔNG");
 					request.getSession().setAttribute("orderCd", orderCd);
+					Common.SetIsUpdate();
 					mv.setViewName("redirect:/ProductionView");
 					return mv;
 				} catch (SQLException e) {

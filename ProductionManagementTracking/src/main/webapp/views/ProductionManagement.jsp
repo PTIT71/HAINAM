@@ -279,6 +279,10 @@ input[type="radio"] {
 	border: 2px solid black;
 	padding-left: 10px;
 }
+input[type="text"]:focus {
+	outline: none;
+	
+}
 </style>
 
 
@@ -411,9 +415,9 @@ input[type="radio"] {
 						%>
 						<c:forEach var="p" items="${lst}">
 							<tr>
-								<td style="text-align: right;"><%=stt%></td>
-								<td>${p.getCustomerName()}</td>
-								<td>${p.getProduction()}</td>
+								<td style="text-align: center;"><%=stt%></td>
+								<td style=" overflow: hidden;"><input type="text" style="width:100%; border: 0px;" readonly="readonly" value="${p.getCustomerName()}"></td>
+								<td style=" overflow: hidden;"><input type="text" style="width:100%; border: 0px;" readonly="readonly" value="${p.getProduction()}"></td>
 								<td style="text-align: center;">${p.getHD_PO()}</td>
 								<td style="text-align: center;">${p.getPSX()}</td>
 								<td style="text-align: center;">${p.getRecieveDt()}</td>
@@ -424,7 +428,7 @@ input[type="radio"] {
 									</c:if> <c:if test="${p.getStatus() == '1'}">
 										<div class="ok-date">ĐÃ GIAO</div>
 									</c:if> <c:if test="${p.getStatus() == '2'}">
-										<div class="warning-date">SẮP ĐẾN</div>
+										<div class="warning-date">ĐẾN HẠN</div>
 									</c:if> <c:if test="${p.getStatus() == '3'}">
 										<div class="warning-ok-date">GIAO TRỄ</div>
 									</c:if> <c:if test="${p.getStatus() == '4'}">
